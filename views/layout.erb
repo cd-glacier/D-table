@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>D-table</title>
+		<% if style = "D_table" %>
+			<link rel="stylesheet" href="table-style.css">
+		<% else%>
+			<link rel="stylesheet" href="style.css">
+		<% end %>
+		<link rel="stylesheet" href="mdl/material.css">
+		<script src="mdl/material.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+
+	<body>
+		<%= yield %>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>

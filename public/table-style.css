@@ -1,0 +1,40 @@
+ body{
+  background:#FFFBE4;
+ }
+
+ .week-cell.mdl-card { 
+	 width: 200px; 
+	 height: 200; 
+	 margin: 12;
+	 float:left;
+ } 
+
+ .week-cell > .mdl-card__title { 
+	 color: #505050; 
+	 background: 
+	 	url('../assets/demos/dog.png') bottom right 15% no-repeat ; 
+ } 
+
+.week-cell.Mon{
+ 	background:#F72F27;
+ }
+
+ .week-cell.Tue{
+ 	background: #FFF8A8;
+ }
+
+ .week-cell.Wed{
+ 	background: #9FD6FF;
+ }
+
+ .week-cell.Thu{
+ 	background: #54DCAC;
+ }
+
+.week-cell.Fri{
+ background: #8BC626;
+}
+
+ .week-cell.Sat{
+ 	background: #E58616;
+ }
