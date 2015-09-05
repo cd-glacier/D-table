@@ -2,39 +2,41 @@
   background:#FFFBE4;
  }
 
- .week-cell.mdl-card { 
-	 width: 200px; 
-	 height: 200; 
+.table-base {
+	margin: 0 auto;
+}
+
+ .mdl-cell{ 
+	 width: 150px; 
+	 height: 150px; 
 	 margin: 12;
-	 float:left;
  } 
 
- .week-cell > .mdl-card__title { 
+ h2 { 
 	 color: #505050; 
-	 background: 
-	 	url('../assets/demos/dog.png') bottom right 15% no-repeat ; 
+	 margin-left: 28px
  } 
 
-.week-cell.Mon{
+.mdl-cell.Mon{
  	background:#F72F27;
  }
 
- .week-cell.Tue{
+ .mdl-cell.Tue{
  	background: #FFF8A8;
  }
 
- .week-cell.Wed{
+ .mdl-cell.Wed{
  	background: #9FD6FF;
  }
 
- .week-cell.Thu{
+ .mdl-cell.Thu{
  	background: #54DCAC;
  }
 
-.week-cell.Fri{
+.mdl-cell.Fri{
  background: #8BC626;
 }
 
- .week-cell.Sat{
+ .mdl-cell.Sat{
  	background: #E58616;
  }
