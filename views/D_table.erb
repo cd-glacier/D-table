@@ -46,6 +46,7 @@
 						<% 6.times do |i| %>
 							<div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-phone <%= @day_hash[i] %> <%= i + 1 %>">
 								<%= @day_hash[i] %>の<%= j + 1 %>
+								<a href="/subjects/<%= @day_hash[i] %>/<%= j + 1 %>"></a>
 							</div>
 						<% end %>
 					<% end %>

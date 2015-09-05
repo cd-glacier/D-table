@@ -19,24 +19,30 @@
 
 .mdl-cell.Mon{
  	background:#F72F27;
+	cursor: pointer;
  }
 
  .mdl-cell.Tue{
  	background: #FFF8A8;
+	cursor: pointer;
  }
 
  .mdl-cell.Wed{
  	background: #9FD6FF;
+	cursor: pointer;
  }
 
  .mdl-cell.Thu{
  	background: #54DCAC;
+	cursor: pointer;
  }
 
 .mdl-cell.Fri{
  background: #8BC626;
+cursor: pointer;
 }
 
  .mdl-cell.Sat{
  	background: #E58616;
+	cursor: pointer;
  }

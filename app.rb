@@ -21,7 +21,6 @@ get "/login" do
 	erb :login
 end
 
-get "/subjects/:code" do
-	params['code']
+get "/subjects/:week/:code" do
 	erb :subjects
 end
