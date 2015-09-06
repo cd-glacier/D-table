@@ -4,11 +4,13 @@
 
 .table-base {
 	margin: 0 auto;
+	width:80%;
+	height:90%;
 }
 
  .mdl-cell{ 
-	 width: 150px; 
-	 height: 150px; 
+	 width: 90px; 
+	 height: 80px; 
 	 margin: 12;
  } 
 

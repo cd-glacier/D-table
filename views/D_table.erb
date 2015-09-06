@@ -28,6 +28,7 @@
 	</div>
 
 	<!--メイン-->
+
   <main class="mdl-layout__content">
 		<div class="page-content">
 			<div class="table-base">
@@ -40,9 +41,9 @@
 					<% end %>
 				</div>
 
-				<!--1限目~7限目の生成-->
+				<!--1限目~6限目の生成-->
 				<div class="mdl-grid">
-					<% 7.times do |j| %>
+					<% 6.times do |j| %>
 						<% 6.times do |i| %>
 							<div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-phone <%= @day_hash[i] %> <%= i + 1 %>">
 								<%= @day_hash[i] %>の<%= j + 1 %>
