@@ -4,6 +4,12 @@ body{
 
 
 /*D_table*/
+
+nav.mdl-navigation p{
+	position: auto 0;
+	margin: 7px 5px;
+}
+
 table.brwsr1 {
     font-size: 12px;
     margin: 30px auto;
