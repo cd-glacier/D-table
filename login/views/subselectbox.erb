@@ -1,0 +1,27 @@
+<%if @id=="rikou" then %>
+<select id = "sub2" name="sub2">
+	<option value="">-- 学科 --</option>
+	<option value="zyoushisu">情シス</option>
+	<option value="interi">インテリ</option>
+	<option value="denki">電気</option>
+</select>
+<% elsif @id=="keizai" %>
+<select id = "sub2" name="sub2">
+	<option value="">-- 学科 --</option>
+	<option value="keizai">経済</option>
+</select>
+<% elsif @id=="bunzyou" %>
+<select id = "sub2" name="sub2">
+	<option value="">-- 学科 --</option>
+	<option value="bunka">文化</option>
+</select>
+<% elsif @id=="seimei" %>
+<select id = "sub2" name="sub2">
+	<option value="">-- 学科 --</option>
+	<option value="seimei">生命</option>
+</select>
+<% else %>
+<select id = "sub2" name="sub2">
+	<option value="">-- 学科 --</option>
+</select>
+<% end %>

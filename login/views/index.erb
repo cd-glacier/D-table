@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang= "ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Form</title>    
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../selectbox.css">   
+</head>
+
+<body>
+	<div id="wrap">
+		<span href="#" class="button" id="toggle-login"><p>D-Table</p></span>
+		<div id="login">
+			<div id="triangle"></div>  
+				<form>
+					<div id="selectors">
+						<div id = "gradeBox" class = "Box">
+						<select id = "grade" name="grade">
+							<option value="">-- 学年 --</option>
+							<option value = "1">1</option>
+							<option value = "2">2</option>
+							<option value = "3">3</option>
+    						<option value = "4">4</option>
+    					</select>
+    					</div>
+    					<div id = "sub1Box" class = "Box">
+    					<select id = "sub1" name="sub1">
+    						<option value="">-- 学部 --</option>
+    						<option value = "rikou">理工学部</option>
+    						<option value = "keizai">経済学部</option>
+    						<option value = "bunzyou">文化情報</option>
+    						<option value = "seimei">生命医科</option>
+    					</select>
+    					</div>
+    					<div id ="sub2Box" class = "Box">
+    					<select id = "sub2" name="sub2">
+    						<option value="">-- 学科 --</option>
+    					</select>
+    					</div>
+    				</div>
+    				<input type = "submit" value = "start!">
+  				</form>
+			</div>
+		</div>
+	</div>
+    <script src='jquery-2.1.4.min.js'></script>
+    <script src="index.js"></script>
+    <script src="selectbox-0.2.js"></script>
+    <script>
+    	$("#grade").selectbox({
+    	});
+    </script>
+    <script>
+    $("#sub1").selectbox({
+	onChange: function (val, inst) {
+		$.ajax({
+			type: "GET",
+			data: {sub1_id: val},
+			url: "/selectsub1",
+			success: function (data) {
+				$("#sub2Box").html(data);
+				$("#sub2").selectbox();
+			}
+		});
+		
+	},
+	effect: "slide"
+	});
+    </script>
+
+    <script>
+    	$("#sub2").selectbox({
+    		
+    	});
+    </script>
+
+</body>
+
+</html>
