@@ -9,21 +9,20 @@
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+			<nav class="mdl-navigation mdl-layout--large-screen-only">
+				<p>理工学部</p>
+				<p>情報システムデザイン学科</p>
+				<p>選択単位数:<%= @sum_credit %></p>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">D-table</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
+		<nav class="mdl-navigation">
+				<p>理工学部</p>
+				<p>情報システムデザイン学科</p>
+				<p>選択単位数:<%= @sum_credit %></p>
+
     </nav>
 	</div>
 
@@ -38,6 +37,10 @@
 			</tr>
 			
 			<!--時間割生成-->
+			<!--
+		 @day_hash = {0 => "nul", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"}
+		 例:月2 -> Mon2
+			-->
 			<% 6.times do |j| %>
 				<tr>
 					<th class="r0"><%= j + 1 %>限目</th>
