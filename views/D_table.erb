@@ -45,8 +45,9 @@
 				<tr>
 					<th class="r0"><%= j + 1 %>限目</th>
 					<% 6.times do |i| %>
-						<td class="r<%= i + 1 %> cell">
-							<a href="/subjects/<%= @day_hash[i + 1] %>/<%= j + 1 %>">click</a>
+						<td class="r<%= i + 1 %> cell" id=" <%= @day_hash[i + 1] %><%= j + 1 %>">
+							
+							<a href="/subjects/<%= @day_hash[i + 1] %>/<%= j + 1 %>"></a>
 						</td>
 					<% end %>
 				</tr>

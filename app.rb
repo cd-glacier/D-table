@@ -17,6 +17,8 @@ end
 get "/D_table" do
 	@style = "D_table"
 	@day_hash = {0 => "nul", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"}
+
+	
 	erb :D_table
 end
 
@@ -27,6 +29,9 @@ end
 get "/subjects/:week/:period" do
 	@week = params[:week]
 	@period = params[:period]
+
+	#仮装データベース
+	@subjects_hash = {"Mon1" => ["建キリ", "解析学", "情報工学概論"], "Mon2" => [nil]}
 	erb :subjects, layout: false
 
 end

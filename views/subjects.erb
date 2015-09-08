@@ -1,8 +1,14 @@
 <div class="subject_wrapper">
 	<h2>科目一覧</h2>
-		<p>a</p>
-		<p>i</p>
-		<p>u</p>
+		<% @subjects_hash.each do |key,value| %>
+			<% if (@week + @period.to_s) == key %>
+				<% value.each do |subject| %>
+					<p><a id="<%= key %>" href="#">
+						<%= subject %>
+					</a></p>
+				<% end %>
+			<% end %>
+		<% end %>
 
 	<div class="form ">
 		<h2>科目入力欄</h2>

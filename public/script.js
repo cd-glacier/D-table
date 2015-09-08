@@ -1,17 +1,14 @@
-/*
 $(function(){  
      $(".cell").click(function(){  
          window.location=$(this).find("a").attr("href");  
          return false;  
     });  
 });
+/*
+$("#Mon1").click(function(){
+	$("#Mon1").html("hoge");
+	
+});
 */
 
 
-$(function() {
-    $(".modal-ajax").colorbox({
-			maxWidth:"80%",
-			maxHeight:"80%",
-			opacity: 0.7
-  });
-});
