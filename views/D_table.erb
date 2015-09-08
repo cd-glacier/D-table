@@ -11,13 +11,17 @@
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
-			<nav class="mdl-navigation mdl-layout--large-screen-only">
-				<!--データベース完成次第変数を入れる-->
-				<p>理工学部</p>
-				<p>情報システムデザイン学科</p>
-				<p>選択単位数:<%= @sum_credit %></p>
-      </nav>
-    </div>
+	  <nav class="mdl-navigation mdl-layout--large-screen-only">
+		<!--データベース完成次第変数を入れる-->
+		<p>理工学部</p>
+			<p>情報システムデザイン学科</p>
+			<p>選択単位数:<%= @sum_credit %></p>
+			<!-- コード書き出し用ボタン -->
+			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  				Export Codes
+			</button>
+      	</nav>
+      </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">D-table</span>
