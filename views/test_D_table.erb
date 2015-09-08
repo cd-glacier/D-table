@@ -45,7 +45,7 @@
 				<tr>
 					<th class="r0"><%= j + 1 %>限目</th>
 					<% 6.times do |i| %>
-						<td class="r<%= i + 1 %> cell" id=" D-table-<%= @day_hash[i + 1] %><%= j + 1 %>">
+						<td class="r<%= i + 1 %> cell" id="D-table-<%= @day_hash[i + 1] %><%= j + 1 %>">
 							<a href="/subjects/<%= @day_hash[i + 1] %>/<%= j + 1 %>"></a>
 						</td>
 					<% end %>
@@ -60,7 +60,7 @@
 			<% @subjects_hash.each do |key,value| %>
 				<% if (@week + @period.to_s) == key %>
 					<% value.each do |subject| %>
-						<p><a id="subject-<%= key %>" href="">
+						<p><a id="subject-<%= key %>" href="#">
 							<%= subject %>
 						</a></p>
 					<% end %>
