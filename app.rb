@@ -26,6 +26,11 @@ get "/login" do
 	erb :login
 end
 
+get '/selectsub1' do
+	@id= params[:sub1_id]
+	erb  :subselectbox
+end
+
 get "/subjects/:week/:period" do
 	@week = params[:week]
 	@period = params[:period]
