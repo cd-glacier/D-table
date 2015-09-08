@@ -10,7 +10,6 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
 			<nav class="mdl-navigation mdl-layout--large-screen-only">
-				<!--データベース完成次第変数を入れる-->
 				<p>理工学部</p>
 				<p>情報システムデザイン学科</p>
 				<p>選択単位数:<%= @sum_credit %></p>
@@ -55,6 +54,46 @@
 		</tbody>
 	</table>
 
+	
+	<div class="subject_wrapper">
+		<h2>科目一覧</h2>
+			<% @subjects_hash.each do |key,value| %>
+				<% if (@week + @period.to_s) == key %>
+					<% value.each do |subject| %>
+						<p><a id="subject-<%= key %>" href="">
+							<%= subject %>
+						</a></p>
+					<% end %>
+				<% end %>
+			<% end %>
+
+		<div class="form ">
+			<h2>科目入力欄</h2>
+			<form action="new" method="post">
+
+				<div class="mdl-textfield mdl-js-textfield">
+					<input class="mdl-textfield__input" type="text" id="<%= @week %><%= @period %>" />
+					<label class="mdl-textfield__label" for="<%= @week %><%= @period %>">科目名</label>
+				</div>
+
+				<div class="mdl-textfield mdl-js-textfield">
+					<input class="mdl-textfield__input" type="text" id="<%= @week %><%= @period %>" />
+					<label class="mdl-textfield__label" for="<%= @week %><%= @period %>">科目コード</label>
+				</div>
+
+				<div class="mdl-textfield mdl-js-textfield">
+					<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="<%= @week %><%= @period %>" />
+					<label class="mdl-textfield__label" for="<%= @week %><%= @period %>">単位数</label>
+					<span class="mdl-textfield__error">数字を入力してください。</span>
+				</div>
+				
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+					SUBMIT
+				</button>
+
+			</form>
+		</div>
+	</div>
 
 
 </div>
