@@ -24,6 +24,13 @@ get "/login" do
 	erb :login
 end
 
-get "/subjects/:week/:code" do
+get "/subjects/:week/:period" do
+	@week = params[:week]
+	@period = params[:period]
 	erb :subjects
+end
+
+post "/subjects/:week/new" do
+	#データベースに保存頼みますー
+	redirect to "/D_table"
 end

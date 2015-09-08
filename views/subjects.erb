@@ -3,11 +3,29 @@
 	<p>i</p>
 	<p>u</p>
 
-<h2>科目入力欄</h2>
-<form action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="Mon1" />
-    <label class="mdl-textfield__label" for="Mon1">科目名</label>
-  </div>
-</form>
+<div class="form ">
+	<h2>科目入力欄</h2>
+	<form action="new" method="post">
 
+		<div class="mdl-textfield mdl-js-textfield">
+			<input class="mdl-textfield__input" type="text" id="<%= @week %><%= @period %>" />
+			<label class="mdl-textfield__label" for="<%= @week %><%= @period %>">科目名</label>
+		</div>
+
+		<div class="mdl-textfield mdl-js-textfield">
+			<input class="mdl-textfield__input" type="text" id="<%= @week %><%= @period %>" />
+			<label class="mdl-textfield__label" for="<%= @week %><%= @period %>">科目コード</label>
+		</div>
+
+		<div class="mdl-textfield mdl-js-textfield">
+			<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="<%= @week %><%= @period %>" />
+			<label class="mdl-textfield__label" for="<%= @week %><%= @period %>">単位数</label>
+			<span class="mdl-textfield__error">数字を入力してください。</span>
+		</div>
+		
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+			SUBMIT
+		</button>
+
+	</form>
+</div>

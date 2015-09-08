@@ -44,79 +44,11 @@
 					<% 6.times do |i| %>
 						<td class="r<%= i + 1 %> cell">
 							<%= @day_hash[i + 1] %>の<%= j + 1 %>
-							<a href="/subjects/<%= @day_hash[i + 1] %>/<%= j + 1 %>"></a>
+							<a  class="modal-ajax" href="/subjects/<%= @day_hash[i + 1] %>/<%= j + 1 %>">click</a>
 						</td>
 					<% end %>
 				</tr>
 			<% end %>
-
-
-			<!--
-			<tr>
-				<th class="r1"></th>
-				<th class="r2">Mon</th>
-				<th class="r3">Tus</th>
-				<th class="r4">Wed</th>
-				<th class="r5">Thu</th>
-				<th class="r6">Fri</th>
-				<th class="r7">Sat</th>
-			</tr>
-			<tr>
-				<th class="r1">1限目</th>
-				<td class="r2">Mon1</td>
-				<td class="r3">Tue1</td>
-				<td class="r4">Wed1</td>
-				<td class="r5">Thu1</td>
-				<td class="r6">Fri1</td>
-				<td class="r7">Sat1</td>
-			</tr>
-			<tr>
-				<th class="r1">2限目</th>
-				<td class="r2">Mon2</td>
-				<td class="r3">Tue2</td>
-				<td class="r4">Wed2</td>
-				<td class="r5">Thu2</td>
-				<td class="r6">Fri2</td>
-				<td class="r7">Sat2</td>
-			</tr>
-			<tr>
-				<th class="r1">3限目</th>
-				<td class="r2">Mon3</td>
-				<td class="r3">Tue3</td>
-				<td class="r4">Wed3</td>
-				<td class="r5">Thu3</td>
-				<td class="r6">Fri3</td>
-				<td class="r7">Sat3</td>
-			</tr>	
-			<tr>
-				<th class="r1">4限目</th>
-				<td class="r2">Mon4</td>
-				<td class="r3">Tue4</td>
-				<td class="r4">Wed4</td>
-				<td class="r5">Thu4</td>
-				<td class="r6">Fri4</td>
-				<td class="r7">Sat4</td>
-			</tr>	
-			<tr>
-				<th class="r1">5限目</th>
-				<td class="r2">Mon5</td>
-				<td class="r3">Tue5</td>
-				<td class="r4">Wed5</td>
-				<td class="r5">Thu5</td>
-				<td class="r6">Fri5</td>
-				<td class="r7">Sat5</td>
-			</tr>
-			<tr>
-				<th class="r1">6限目</th>
-				<td class="r2">Mon6</td>
-				<td class="r3">Tue6</td>
-				<td class="r4">Wed6</td>
-				<td class="r5">Thu6</td>
-				<td class="r6">Fri6</td>
-				<td class="r7">Sat6</td>
-			</tr>
-
-			-->
 		</tbody>
 	</table>
 
