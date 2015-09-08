@@ -96,8 +96,12 @@ table.brwsr1 td.r6 {
 
 
 /*subjects*/
-.fomr{
-	background-color: blue;
+.form{
+	background-color: #FFFBE4;
+}
+
+.subject_wrapper{
+	background: #FFFBE4;
 }
 
 

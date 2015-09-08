@@ -27,10 +27,20 @@ end
 get "/subjects/:week/:period" do
 	@week = params[:week]
 	@period = params[:period]
-	erb :subjects
+	erb :subjects, layout: false
+
 end
 
 post "/subjects/:week/new" do
 	#データベースに保存頼みますー
 	redirect to "/D_table"
+end
+
+
+#for debugging
+get "/test/subjects/:week/:period" do
+	@week = params[:week]
+	@period = params[:period]
+	erb :subjects
+
 end
