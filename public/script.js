@@ -4,11 +4,8 @@ $(function(){
          return false;  
     });  
 });
-/*
-$("#Mon1").click(function(){
-	$("#Mon1").html("hoge");
-	
-});
-*/
 
+$("#subject-Mon1").on("click", function(){
+	$("#D-table-Mon1").html("hoge");
+});
 
