@@ -53,8 +53,8 @@
 				<tr>
 					<th class="r0"><%= j + 1 %>限目</th>
 					<% 6.times do |i| %>
-						<td class="r<%= i + 1 %>" id=" D-table-<%= @day_hash[i + 1] %><%= j + 1 %> off">
-							<div class="td-content"><!--中身？--></div>
+						<td class="r<%= i + 1 %>" id=" D-table-<%= @day_hash[i + 1] %><%= j + 1 %> off" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>">
+							<div class="td-content">中身?</div>
 							<div class="modal"> 
 								<a href="#" class="close"><i class="material-icons">clear</i></a>
     							<div class="modal-content">
@@ -70,9 +70,13 @@
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script> 
 
 <script>
+var day = null;
+var period = -1;
 $(function () {
     $('body').on('click', 'td', function (event) {
         event.preventDefault();
+				day = $(this).data("day");
+				period = $(this).data("period");
         var ele = $(this);
         $(this).children('.td-content').fadeOut();
         $(this).parent().addClass('open');
@@ -95,6 +99,14 @@ $(function () {
         }, 300);       
         
     });
+});
+
+$.ajax({
+	 url: "/subjects/" + String(day) + "/" + period,
+	 success: function(data) {
+			 $(".modal").html(data);
+	 }
+	
 });
 </script>
 
