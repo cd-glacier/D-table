@@ -5,7 +5,7 @@
 	font-family: Arial, sans-serif;
 	font-size: 2em;
 	font-weight: normal;
-	height: 30px;
+	height: 70px;
 	position: relative;
 	width: 100%;
 }
@@ -32,9 +32,9 @@
 }
 .sbSelector{
 	display: block;
-	height: 30px;
+	height: 70px;
 	left: 0;
-	line-height: 30px;
+	line-height: 70px;
 	outline: none;
 	overflow: hidden;
 	position: absolute;
@@ -90,7 +90,7 @@
 	padding: 0;
 	position: absolute;
 	top: 30px;
-	width: 100%;
+	width: calc(100% - 2px);
 	z-index: 1;
 	overflow-y: auto;
 }

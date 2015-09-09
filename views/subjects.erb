@@ -3,7 +3,7 @@
 		<% @subjects_hash.each do |key,value| %>
 			<% if (@week + @period.to_s) == key %>
 				<% value.each do |subject| %>
-					<p><a id="subject-<%= key %>" href="#">
+					<p><a class="subject-<%= key %>" href="#">
 						<%= subject %>
 					</a></p>
 				<% end %>
