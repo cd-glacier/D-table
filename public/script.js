@@ -10,7 +10,8 @@ $(function(){
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 $(".subject").on("click", function(){
 	var day_period = $(this).data("dp");
-	$(".D-table-" + day_period ).html("hoge");
+	var choiced_subject = $(this).data("subject");
+	$(".D-table-" + day_period ).html(choiced_subject);
 });
 
 
