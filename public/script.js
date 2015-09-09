@@ -4,7 +4,14 @@ var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 $(".subject").on("click", function(){
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
-	$(".D-table-" + day_period ).html(choiced_subject + "<a>[x]</a>");
+	$(".D-table-" + day_period ).html("<a class='subject-destroy'>" + choiced_subject + "[x]</a>");
+});
+
+/*[x]押されたら選択されてる教科消して,(単位数も削除)*/
+$(".subject-destroy").on("click", function(){
+	var element = $(this).parent();
+	$(element).html('<div class="td-content">clickで科目を選択</div>');
+	$(this).remove();
 });
 
 
