@@ -9,7 +9,7 @@ body{
 }
 
 
-.button{
+.login-button{
   width:40%;
   height:2em;
   background:#3399cc;
@@ -17,12 +17,13 @@ body{
   margin:auto;
   padding:0;
   text-align: center;
+  line-height:2em;
   text-decoration:none;
   font-size:3em;
   color:#fff;
   cursor:pointer;
   margin: 0 auto;
-  margin-top: ;
+  margin-top: 1em;
   transition:background .3s;
   -webkit-transition:background .3s;
 }
@@ -41,7 +42,6 @@ body{
   width:80%;
   margin:0 auto;
   margin-top:0px;
-  margin-bottom:2%;
   display: none;
   transition:opacity 1s;
   -webkit-transition:opacity 1s;

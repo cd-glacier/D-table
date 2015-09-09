@@ -122,7 +122,7 @@ td.slide{
   width: 100%;
   height: 100%;
   color: #eee;
-  background-color: #FF4081;
+  
   box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
 }
 
@@ -145,7 +145,7 @@ td.slide{
 .modal>.modal-content {
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 0px;
 }
 
 .modal>.modal-content>h3 {
@@ -156,11 +156,12 @@ td.slide{
 
 /*subjects*/
 .form{
-	background-color: #2244aa;
+	background-color: #FFFBE4;
 }
 
 .subject_wrapper{
-	background: #EBB52D;
+	background: #FFFBE4;
+	height:100%;
 }
 
 

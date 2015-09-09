@@ -25,7 +25,7 @@ end
 
 get '/selectsub1' do
 	@id= params[:sub1_id]
-	erb  :subselectbox
+	erb  :subselectbox, :layout => false;
 end
 
 get "/subjects/:week/:period" do
