@@ -43,20 +43,3 @@ post "/subjects/:week/new" do
 	redirect to "/D_table"
 end
 
-
-#for debugging
-get "/test/subjects/:week/:period" do
-	@week = params[:week]
-	@period = params[:period]
-	erb :subjects
-end
-
-get "/test_D_table" do
-	@week = "Mon"
-	@period = 1
-	@day_hash = {0 => "nul", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"}
-	@subjects_hash = {"Mon1" => ["建キリ", "解析学", "情報工学概論"], "Mon2" => [nil]}
-	
-	erb :test_D_table
-end
-

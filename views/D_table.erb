@@ -68,46 +68,6 @@
 	</table>
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script> 
 
-<script>
-
-$(function () {
-    $('body').on('click', 'td', function (event) {
-				event.preventDefault();
-				var day = $(this).data("day");
-				var period = $(this).data("period");
-				var ele = $(this);
-        $(this).children('.td-content').fadeOut();
-        $(this).parent().addClass('open');
-        $(this).addClass('slide');
-        setTimeout(function () {
-            ele.children('.modal').fadeIn();
-            setTimeout(function () {
-                
-            }, 500);
-				}, 600);
-				
-				$.ajax({
-					 url: "/subjects/" + String(day) + "/" + period,
-					 success: function(data) {
-			 		 		$(".modal-content").html(data);
-	 			   }
-				});
-    });
-    $('body').on('click', '.close', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        $(this).parent().fadeOut();
-        var ele = $(this);
-        setTimeout(function (){
-        	ele.parent().parent().removeClass('slide');
-        	ele.parent().siblings().fadeIn();
-        }, 300);       
-        
-    });
-});
-
-</script>
-
 
 </div>
 
