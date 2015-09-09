@@ -104,7 +104,7 @@ $(function () {
 $.ajax({
 	 url: "/subjects/" + String(day) + "/" + period,
 	 success: function(data) {
-			 $(".modal").html(data);
+			 $(".modal-content").html(data);
 	 }
 	
 });
