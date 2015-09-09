@@ -1,4 +1,5 @@
 <div class="subject_wrapper">
+	<p>/subjects/<%= @week %>/<%= @period %></p>
 	<h2>科目一覧</h2>
 		<% @subjects_hash.each do |key,value| %>
 			<% if (@week + @period.to_s) == key %>
