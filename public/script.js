@@ -9,6 +9,7 @@ $(function(){
 /*subjectで選択した科目をD_tableで表示*/
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 
+
 $(".subject-Mon1").on("click", function(){
 	$(".D-table-Mon1").html("hoge");
 });
