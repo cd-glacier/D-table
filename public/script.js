@@ -8,10 +8,9 @@ $(function(){
 
 /*subjectで選択した科目をD_tableで表示*/
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
-
-
-$(".subject-Mon1").on("click", function(){
-	$(".D-table-Mon1").html("hoge");
+$(".subject").on("click", function(){
+	var day_period = $(this).data("dp");
+	$(".D-table-" + day_period ).html("hoge");
 });
 
 
