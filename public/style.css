@@ -9,7 +9,10 @@ nav.mdl-navigation p{
 	position: auto 0;
 	margin: 7px 5px;
 }
-
+nav .mdl-button{
+	width:70%;
+	margin: 0 auto;
+}
 table.brwsr1 {
     font-size: 12px;
     margin: 30px auto;
@@ -43,7 +46,7 @@ table.brwsr1 th.r0 {
  
 table.brwsr1 th.r1,
 table.brwsr1 td.r1 {
-    width: 128px;
+    
     border-left: #fff 1px solid;
     border-right: #999 1px solid;
     background: #1D66A8;
@@ -60,7 +63,7 @@ table.brwsr1 th.r6{
  
 table.brwsr1 th.r2,
 table.brwsr1 td.r2 {
-    width: 128px;
+   
     border-left: #fff 1px solid;
     border-right: #999 1px solid;
     background: #4886BE;
@@ -68,56 +71,87 @@ table.brwsr1 td.r2 {
  
 table.brwsr1 th.r3,
 table.brwsr1 td.r3 {
-    width: 128px;
+    
     border-left: #fff 1px solid;
     background: #6DA2D9;
 }
 
 table.brwsr1 th.r4,
 table.brwsr1 td.r4 {
-    width: 128px;
+    
     border-left: #fff 1px solid;
     background: #74A4D9;
 }
 
 table.brwsr1 th.r5,
 table.brwsr1 td.r5 {
-    width: 128px;
+    
     border-left: #fff 1px solid;
     background: #A5C4F1;
 }
 
 table.brwsr1 th.r6,
 table.brwsr1 td.r6 {
-    width: 128px;
+    
     border-left: #fff 1px solid;
     background: #B4D1F1;
 }
 
-
-
-.btn {
-  transition: all 0.5s;
-  max-width: 1000px;
-  max-height: 1000px;
+.modal{
+	display:none;
+}
+td{
+	position:relative;
+	background-color:blue; 
+	width:128px; 
+	height:100px; 
+	transition-property: all;
+	transition-duration:1s;
+	transition-timing-function:ease-in-out;
+}
+td.slide{
+	width:400px;
+	height:400px;
+}
+.modal {
+  z-index: 20;
+  cursor:default;
+  display: none;
   position: relative;
-  right: 10px;
-  bottom: 100px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #eee;
+  background-color: #FF4081;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
 }
 
-.btn-float {
-  width: 55.5px;
-  height: 55.5px;
-  background: #FF4081;
-  border: none;
-  outline: 0;
-  border-radius: 50%;
-  color: #eee;
+.modal>.close {
+  display: inline-block;
+  position: relative;
+  top:10px;
+  margin: 10px;
+  right: 10px;
+  width: 30px;
+  text-align: right;
+  float: right;
+  font-size: 1.6rem;
+  line-height: 37px;
+  color: rgba(0,0,0,0.37);
+}
+
+.modal>.close:hover { cursor: pointer; }
+
+.modal>.modal-content {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.modal>.modal-content>h3 {
+  font-size: 52px;
   text-align: center;
-  letter-spacing: 0.5px;
-  padding: 0;
-  line-height: 56px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding-top: 150px;
 }
 
 /*subjects*/
