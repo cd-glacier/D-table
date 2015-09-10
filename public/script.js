@@ -1,3 +1,5 @@
+var sum_credits = 0;
+
 /*subjectで選択した科目をD_tableで表示*/
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 $(document).on("click", ".subject", function(event){
