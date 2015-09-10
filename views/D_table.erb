@@ -1,5 +1,4 @@
 
-<link rel="stylesheet" href="/mdl/material.css">
 <!--ナビゲーションバー-->
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -52,7 +51,7 @@
 				<tr>
 					<th class="r0"><%= j + 1 %>限目</th>
 					<% 6.times do |i| %>
-						<td class="r<%= i + 1 %> D-table-<%= @day_hash[i + 1] %><%= j + 1 %>" id="D-table-<%= @day_hash[i + 1] %><%= j + 1 %> off" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>">
+						<td class="r<%= i + 1 %> D-table-<%= @day_hash[i + 1] %><%= j + 1 %> before" id="D-table-<%= @day_hash[i + 1] %><%= j + 1 %> off" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>">
 							<div class="td-content">clickで科目を選択</div>
 							<div class="modal"> 
 								<a href="#" class="close"><i class="material-icons">clear</i></a>
