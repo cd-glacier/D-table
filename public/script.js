@@ -12,7 +12,7 @@ $(document).on("click", ".subject", function(event){
 	$(this).parents('td').addClass('before');
     var ele = $(this);
     setTimeout(function (){
-        ele.parents('td').removeClass('slide');
+        ele.parents('td').removeClass('open');
         $(".D-table-"+day_period).children(".td-content").fadeIn();
     }, 300); 
 });
@@ -29,22 +29,22 @@ $(document).on("click",".subject-destroy",function(event){
 
 /*モーダル*/
 $(function () {
-    $(document).on('click', '.before', function (event) {
-				event.preventDefault();
+    $(document).on('click', '.before', function (event) {				
 				event.stopPropagation();
+				$('td.open').children('.modal').fadeOut();
+				$('td.open').children('.td-content').fadeIn();
+				$('td.open').addClass('before');
+				$('td.open').removeClass('open');
 				var day = $(this).data("day");
 				var period = $(this).data("period");
 				var ele = $(this);
 				ele.removeClass('before');
 				/*animation*/
         $(this).children('.td-content').fadeOut();
-        $(this).addClass('slide');
+        $(this).addClass('open');
         setTimeout(function () {
             ele.children('.modal').fadeIn();
-            setTimeout(function () {
-                
-            }, 500);
-				}, 600);
+				}, 1000);
 
 				/*ajax*/
 				$.ajax({
@@ -61,10 +61,12 @@ $(function () {
         $(this).parents('td').addClass('before');
         var ele = $(this);
         setTimeout(function (){
-        	ele.parent().parent().removeClass('slide');
+        	ele.parent().parent().removeClass('open');
         	ele.parent().siblings().fadeIn();
         }, 300);       
         
     });
+
 });
+
 
