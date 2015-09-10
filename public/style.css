@@ -145,9 +145,9 @@ td.open{
 
 .modal>.close:hover { cursor: pointer; }
 
-.modal>.modal-content {
-  width: 100%;
-  padding: 0px;
+.modal-content {
+    height: 100%;
+ 
 }
 
 .modal>.modal-content>h3 {
@@ -160,8 +160,11 @@ td.open{
 .form{
 	background-color: #FFFBE4;
 }
-form{
+.modal-content form{
 	color:#270F9C;
+	position:absolute;
+	margin-bottom:0.5em;
+	bottom:0;
 }
 
 
