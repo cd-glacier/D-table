@@ -61,19 +61,19 @@
       									<h3>error</h3>
       								</div>
       								<h2>科目入力欄</h2>
-									<form action="new" method="post">
+											<form action="/<%= @day_hash[i] %>/<%= j+1 %>/new" method="post">
 										<div class="mdl-textfield mdl-js-textfield">
-											<input class="mdl-textfield__input" type="text" id="<%= @day_hash[i] %><%= j+1 %>" />
+											<input class="mdl-textfield__input" type="text" id="<%= @day_hash[i] %><%= j+1 %>" name="subname" />
 											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">科目名</label>
 										</div>
 
 										<div class="mdl-textfield mdl-js-textfield">
-											<input class="mdl-textfield__input" type="text" id="<%= @day_hash[i] %><%= j+1 %>" />
-											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">科目コード</label>
+											<input class="mdl-textfield__input" type="text" id="<%= @day_hash[i] %><%= j+1 %>" name="code"/>
+											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>" >科目コード(英字大文字)</label>
 										</div>
 
 										<div class="mdl-textfield mdl-js-textfield">
-											<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="<%= @day_hash[i] %><%= j+1 %>" />
+											<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="<%= @day_hash[i] %><%= j+1 %>"  name="credit"/>
 											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">単位数</label>
 											<span class="mdl-textfield__error">数字を入力してください。</span>
 										</div>		
