@@ -5,7 +5,13 @@ $(".subject").on("click", function(){
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
 	$(".D-table-" + day_period ).html("<a class='subject-destroy'>" + choiced_subject + "[x]</a>");
-});
+	$(this).parent(".modal").fadeOut();
+		 var ele = $(this);
+		 setTimeout(function (){
+				 ele.parent(".td").removeClass('slide');
+				 ele.parent(".td-content").fadeIn();
+		 }, 300);
+	});
 
 /*[x]押されたら選択されてる教科消して,(単位数も削除)*/
 $(".subject-destroy").on("click", function(){
