@@ -5,7 +5,7 @@ $(document).on("click", ".subject", function(event){
     event.stopPropagation();
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
-	$(".D-table-"+day_period).children(".td-dynamic").html( "<a class='subject-destroy'>"+choiced_subject + "[x]</a>");
+	$(".D-table-"+day_period).children(".td-content").html( "<a class='subject-destroy'>"+choiced_subject + "[x]</a>");
 	$(this).parents('.modal').fadeOut();
 	$(this).parents('td').addClass('before');
     var ele = $(this);
