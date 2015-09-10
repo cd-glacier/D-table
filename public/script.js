@@ -1,13 +1,14 @@
 
 /*subjectで選択した科目をD_tableで表示*/
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
-$(".subject").on("click", function(){
+$(document).on("click", ".subject", function(event){
 	event.preventDefault();
     event.stopPropagation();
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
 	$(".D-table-"+day_period).children(".td-content").html( "<a class='subject-destroy'>"+choiced_subject + "[x]</a>");
 	$(this).parents('.modal').fadeOut();
+	$(this).parents('td').addClass('before');
     var ele = $(this);
     setTimeout(function (){
         ele.parents('td').removeClass('slide');
@@ -16,8 +17,7 @@ $(".subject").on("click", function(){
 });
 
 /*[x]押されたら選択されてる教科消して,(単位数も削除)*/
-$(".subject-destroy").on("click", function(){
-	event.preventDefault();
+$(document).on("click",".subject-destroy",function(event){	
     event.stopPropagation();
 	var element = $(this).parent();
 	$(this).remove();
@@ -28,14 +28,15 @@ $(".subject-destroy").on("click", function(){
 
 /*D-tableにあったscript*/
 $(function () {
-    $('body').on('click', 'td', function (event) {
+    $(document).on('click', '.before', function (event) {
 				event.preventDefault();
+				event.stopPropagation();
 				var day = $(this).data("day");
 				var period = $(this).data("period");
 				var ele = $(this);
+				ele.removeClass('before');
 				/*animation*/
         $(this).children('.td-content').fadeOut();
-        $(this).parent().addClass('open');
         $(this).addClass('slide');
         setTimeout(function () {
             ele.children('.modal').fadeIn();
@@ -52,10 +53,11 @@ $(function () {
 	 			   }
 				});
     });
-    $('body').on('click', '.close', function (event) {
+    $(document).on('click', '.close', function (event) {
         event.preventDefault();
         event.stopPropagation();
         $(this).parent().fadeOut();
+        $(this).parents('td').addClass('before');
         var ele = $(this);
         setTimeout(function (){
         	ele.parent().parent().removeClass('slide');

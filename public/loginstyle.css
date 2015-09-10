@@ -9,7 +9,8 @@ body{
 }
 
 
-.login-button{
+.logins{
+  font-size:300%;
   width:40%;
   height:2em;
   background:#3399cc;
