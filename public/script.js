@@ -2,16 +2,18 @@
 /*subjectで選択した科目をD_tableで表示*/
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 $(".subject").on("click", function(){
+	event.preventDefault();
+    event.stopPropagation();
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
-	$(".D-table-" + day_period ).html("<a class='subject-destroy'>" + choiced_subject + "[x]</a>");
-	$(this).parent(".modal").fadeOut();
-		 var ele = $(this);
-		 setTimeout(function (){
-				 ele.parent(".td").removeClass('slide');
-				 ele.parent(".td-content").fadeIn();
-		 }, 300);
-	});
+	$(".D-table-"+day_period).children(".td-content").html(choiced_subject + "<a>[x]</a>");
+	$(this).parents('.modal').fadeOut();
+    var ele = $(this);
+    setTimeout(function (){
+        ele.parents('td').removeClass('slide');
+        $(".D-table-"+day_period).children(".td-content").fadeIn();
+    }, 300); 
+});
 
 /*[x]押されたら選択されてる教科消して,(単位数も削除)*/
 $(".subject-destroy").on("click", function(){
