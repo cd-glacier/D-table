@@ -1,4 +1,3 @@
-
 /*subjectで選択した科目をD_tableで表示*/
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 $(document).on("click", ".subject", function(event){
@@ -26,7 +25,7 @@ $(document).on("click",".subject-destroy",function(event){
 });
 
 
-/*D-tableにあったscript*/
+/*モーダル*/
 $(function () {
     $(document).on('click', '.before', function (event) {
 				event.preventDefault();

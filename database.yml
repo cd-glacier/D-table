@@ -1,4 +1,4 @@
 
 development:
   adapter: sqlite3
-  database: memos.db
+  database: subject.db

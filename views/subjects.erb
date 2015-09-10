@@ -2,13 +2,12 @@
 <div class="subject_wrapper">
 	<p>/subjects/<%= @week %>/<%= @period %></p>
 	<h2>科目一覧</h2>
-		<% @subjects_hash.each do |key,value| %>
-			<% if (@week + @period.to_s) == key %>
-				<% value.each do |subject| %>
-					<p><a class="subject" data-subject="<%= subject %>" data-dp="<%= @week + @period.to_s %>" href="#">
-						<%= subject %>
+		<!--データベース導入後-->
+		<% @subject.each do |subject| %>
+			<% if subject.dates == @week + @period %>
+				<p><a class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" href="#">
+						<%= subject.subname %>
 					</a></p>
-				<% end %>
 			<% end %>
 		<% end %>
 
