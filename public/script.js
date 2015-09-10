@@ -37,7 +37,7 @@ $(function () {
 				$.ajax({
 					 url: "/subjects/" + String(day) + "/" + period,
 					 success: function(data) {
-			 		 		$(".modal-content").html(data);
+			 		 		$(".D-table-" + String(day) + period + " .modal-content").html(data);
 	 			   }
 				});
     });

@@ -34,6 +34,7 @@ get "/subjects/:week/:period" do
 
 	#仮装データベース
 	@subjects_hash = {"Mon1" => ["建キリ", "解析学", "情報工学概論"], "Mon2" => [nil]}
+	
 	erb :subjects, layout: false
 
 end
