@@ -12,6 +12,20 @@
 			<% end %>
 		<% end %>
 
+		<!--データベース導入後
+<% 
+=begin %>
+		<% @subject.each do |subject| %>
+			<% if subject.dates == @week + @period %>
+				<p><a class="subject" data-subject="<%= subject.name %>" data-dp="<%= subject.dates %>" href="#">
+						<%= subject %>
+					</a></p>
+			<% end %>
+		<% end %>
+<% 
+=end %>
+		-->
+
 		<h2>科目入力欄</h2>
 		<form action="new" method="post">
 
