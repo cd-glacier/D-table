@@ -11,8 +11,9 @@
       <!-- Navigation. We hide it in small screens. -->
 	  <nav class="mdl-navigation mdl-layout--large-screen-only">
 		<!--データベース完成次第変数を入れる-->
-		<p>理工学部</p>
-			<p>情報システムデザイン学科</p>
+		<p><%= @gakubu_hash[@gakubu] %></p>
+		<p><%= @gakka_hash[@gakka] %></p>
+		<p><%= @grade %>年</p>
 			<p>選択単位数:<%= @sum_credit %></p>
 			<!-- コード書き出し用ボタン -->
 			<p><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Export Codes</button></p>
@@ -56,7 +57,7 @@
 							<div class="modal"> 
 								<a href="#" class="close"><i class="material-icons">clear</i></a>
     							<div class="modal-content">
-      								<h3>Moda Content</h3>
+      								<h3>error</h3>
     							</div>
   							</div>
 						</td>

@@ -1,1 +1,3 @@
-<%= @subject.id %>
+<% @subject.each do |subject|%>
+	<p><%= subject.subname %></p>
+<% end %>

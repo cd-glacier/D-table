@@ -25,7 +25,7 @@ $(document).on("click",".subject-destroy",function(event){
 });
 
 
-/*D-tableにあったscript*/
+/*モーダル*/
 $(function () {
     $(document).on('click', '.before', function (event) {
 				event.preventDefault();
