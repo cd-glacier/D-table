@@ -51,9 +51,22 @@ get "/subjects/:week/:period" do
 
 end
 
-post "/subjects/:week/new" do
-	#データベースに保存頼みますー
-	redirect to "/D_table"
+post "/:week/:period/new" do
+	puts params[:code]
+	puts params[:subname]
+	@subject = Zyoushisu_subject.new
+	@subject.code = params[:code]
+	@subject.subname = params[:subname]
+	dates_temp = params[:week] + params[:period]
+	@subject.dates = dates_temp 
+	@subject.credit = params[:credit]
+	@subject.counter = 1
+	@subject.this_url = "null"
+	@subject.last_url = "null"
+	@subject.classes = 1
+	@subject.remark = 0
+	@subject.semester = "Spring"
+	@subject.save
 end
 
 
