@@ -6,6 +6,13 @@
 			<div id="triangle"></div>  
 				<form action="D_table">
 					<div id="selectors">
+						<div id = "semesterBox" class = "Box">
+						<select id = "semester" name="semester">
+							<option value="">-- 学期 --</option>
+							<option value = "Spring">春</option>
+							<option value = "Autumn">秋</option>
+    					</select>
+    					</div>
 						<div id = "gradeBox" class = "Box">
 						<select id = "grade" name="grade">
 							<option value="">-- 学年 --</option>
@@ -37,7 +44,10 @@
 	</div>
 	<script src='jquery-2.1.4.min.js'></script>
 	<script src="selectbox-0.2.js"></script>
-	
+    <script>
+    	$("#semester").selectbox({
+    	});
+    </script>	
     <script>
     	$("#grade").selectbox({
     	});
