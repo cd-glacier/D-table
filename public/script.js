@@ -6,7 +6,7 @@ $(".subject").on("click", function(){
     event.stopPropagation();
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
-	$(".D-table-"+day_period).children(".td-content").html(choiced_subject + "<a>[x]</a>");
+	$(".D-table-"+day_period).children(".td-content").html( "<a class='subject-destroy'>"+choiced_subject + "[x]</a>");
 	$(this).parents('.modal').fadeOut();
     var ele = $(this);
     setTimeout(function (){
@@ -17,9 +17,12 @@ $(".subject").on("click", function(){
 
 /*[x]押されたら選択されてる教科消して,(単位数も削除)*/
 $(".subject-destroy").on("click", function(){
+	event.preventDefault();
+    event.stopPropagation();
 	var element = $(this).parent();
-	$(element).html('<div class="td-content">clickで科目を選択</div>');
 	$(this).remove();
+	$(element).html('clickで科目を選択');
+	
 });
 
 
