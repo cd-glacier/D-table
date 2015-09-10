@@ -52,6 +52,8 @@ get "/subjects/:week/:period" do
 end
 
 post "/:week/:period/new" do
+	puts params[:code]
+	puts params[:subname]
 	@subject = Zyoushisu_subject.new
 	@subject.code = params[:code]
 	@subject.subname = params[:subname]

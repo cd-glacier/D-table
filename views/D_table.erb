@@ -61,7 +61,7 @@
       									<h3>error</h3>
       								</div>
       								<h2>科目入力欄</h2>
-											<form action="/<%= @day_hash[i] %>/<%= j+1 %>/new" method="post">
+											<form action="/<%= @day_hash[i] %>/<%= j+1 %>/new" method="post" onsubmit="send()">
 										<div class="mdl-textfield mdl-js-textfield">
 											<input class="mdl-textfield__input" type="text" id="<%= @day_hash[i] %><%= j+1 %>" name="subname" />
 											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">科目名</label>
@@ -77,7 +77,7 @@
 											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">単位数</label>
 											<span class="mdl-textfield__error">数字を入力してください。</span>
 										</div>		
-										<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+										<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>">
 											SUBMIT
 										</button>
 									</form>

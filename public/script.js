@@ -82,4 +82,22 @@ $(function () {
 
 });
 
-
+/*post送信後、科目一覧に追加、cellに表示*/
+$(document).on('click', '.mdl-button', function(event){
+  event.preventDefault();
+	var day = $(this).data("day");
+	var period = $(this).data("period");
+	console.log($(this).parent().find("input[name=subname]").val());
+	$.ajax({
+		type: "POST",
+		url: "/" + day + "/" + period + "/new",
+		data: {
+			"subname": $(this).parent().find("input[name=subname]").val(),
+			"code": $(this).parent().find("input[name=code]").val(),
+			"credit": $(this).parent().find("input[name=credit]").val()
+		},
+		success: function(){
+			alert("保存しました。");
+		}
+	});
+});
