@@ -41,28 +41,31 @@ $(document).on("click",".subject-destroy",function(event){
 $(function () {
     $(document).on('click', '.before', function (event) {				
 				event.stopPropagation();
-				$('td.open').children('.modal').fadeOut();
-				$('td.open').children('.td-content').fadeIn();
-				$('td.open').addClass('before');
-				$('td.open').removeClass('open');
+				var ele = $('td.open');
 				var day = $(this).data("day");
 				var period = $(this).data("period");
-				var ele = $(this);
-				ele.removeClass('before');
+				var ele2 = $(this);
+				ele2.removeClass('before');
 				/*animation*/
         $(this).children('.td-content').fadeOut();
         $(this).addClass('open');
-        setTimeout(function () {
-            ele.children('.modal').fadeIn();
+        setTimeout(function() {
+            ele2.children('.modal').fadeIn();
 				}, 1000);
-
+		setTimeout(function(){
+				ele.children('.modal').fadeOut();
+				ele.children('.td-content').fadeIn();
+				ele.addClass('before');
+				ele.removeClass('open');
+		},700);
 				/*ajax*/
-				$.ajax({
-					 url: "/subjects/" + String(day) + "/" + period,
-					 success: function(data) {
-			 		 		$(".D-table-" + String(day) + period + " .modal-dynamic").html(data);
-	 			   }
-				});
+	$.ajax({
+		url: "/subjects/" + String(day) + "/" + period,
+		success: function(data) {
+			$(".D-table-" + String(day) + period + " .modal-dynamic").html(data);
+	 	}
+	});
+		
     });
     $(document).on('click', '.close', function (event) {
         event.preventDefault();
