@@ -29,7 +29,7 @@ get "/D_table" do
 	@day_hash = {0 => "nul", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"}
 
 	#合計単位数
-	@sum_credit = 0
+	@sum_credits = 0
 	erb :D_table
 end
 

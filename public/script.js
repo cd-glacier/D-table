@@ -2,7 +2,7 @@
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 $(document).on("click", ".subject", function(event){
 	event.preventDefault();
-    event.stopPropagation();
+  event.stopPropagation();
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
 	$(".D-table-"+day_period).children(".td-content").html( "<a class='subject-destroy'>"+choiced_subject + "[x]</a>");

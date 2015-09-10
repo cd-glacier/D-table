@@ -5,8 +5,9 @@
 		<!--データベース導入後-->
 		<% @subject.each do |subject| %>
 			<% if subject.dates == @week + @period %>
-				<p><a class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" href="#">
-						<%= subject.subname %>
+				<p><a class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
+					<%= subject.subname %>
+					(<%= subject.grade %>年)
 					</a></p>
 			<% end %>
 		<% end %>

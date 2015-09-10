@@ -10,7 +10,6 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
 	  <nav class="mdl-navigation mdl-layout--large-screen-only">
-		<!--データベース完成次第変数を入れる-->
 		<p><%= @gakubu_hash[@gakubu] %></p>
 		<p><%= @gakka_hash[@gakka] %></p>
 		<p><%= @grade %>年</p>
@@ -23,9 +22,10 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">D-table</span>
 		<nav class="mdl-navigation">
-				<p>理工学部</p>
-				<p>情報システムデザイン学科</p>
-				<p>選択単位数:<%= @sum_credit %></p>
+			<p><%= @gakubu_hash[@gakubu] %></p>
+			<p><%= @gakka_hash[@gakka] %></p>
+			<p><%= @grade %>年</p>
+			<p>選択単位数:<%= @sum_credit %></p>
 				<!-- コード書き出し用ボタン -->
 				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent navb">
   					Export Codes
