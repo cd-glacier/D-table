@@ -1,13 +1,20 @@
 var sum_credits = 0;
 
 /*subjectで選択した科目をD_tableで表示*/
-var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 $(document).on("click", ".subject", function(event){
 	event.preventDefault();
   event.stopPropagation();
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
+	var choiced_credits = $(this).data("credit");
+	/*単位数計算*/
+	sum_credits += choiced_credits;
 	$(".D-table-"+day_period).children(".td-content").html( "<a class='subject-destroy'>"+choiced_subject + "[x]</a>");
+
+	/*単位表示*/
+	$(".sum-credits").html("選択単位数:" + sum_credits);
+	
+
 	$(this).parents('.modal').fadeOut();
 	$(this).parents('td').addClass('before');
     var ele = $(this);
@@ -15,15 +22,18 @@ $(document).on("click", ".subject", function(event){
         ele.parents('td').removeClass('open');
         $(".D-table-"+day_period).children(".td-content").fadeIn();
     }, 300); 
+		/*htmlへ単位*/
 });
 
 /*[x]押されたら選択されてる教科消して,(単位数も削除)*/
 $(document).on("click",".subject-destroy",function(event){	
-    event.stopPropagation();
+  event.stopPropagation();  
 	var element = $(this).parent();
+	var choiced_credits = $(this).data("credit");
+	/*単位数計算*/
+	sum_credits -= coiced_credits;
 	$(this).remove();
 	$(element).html('clickで科目を選択');
-	
 });
 
 
