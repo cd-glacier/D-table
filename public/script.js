@@ -50,7 +50,7 @@ $(function () {
 				$.ajax({
 					 url: "/subjects/" + String(day) + "/" + period,
 					 success: function(data) {
-			 		 		$(".D-table-" + String(day) + period + " .modal-content").html(data);
+			 		 		$(".D-table-" + String(day) + period + " .modal-dynamic").html(data);
 	 			   }
 				});
     });

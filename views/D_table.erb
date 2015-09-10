@@ -56,8 +56,31 @@
 							<div class="td-content">clickで科目を選択</div>
 							<div class="modal"> 
 								<a href="#" class="close"><i class="material-icons">clear</i></a>
-    							<div class="modal-content">
-      								<h3>error</h3>
+    							<div class="modal-contet">
+    								<div class= "modal-dynamic">
+      									<h3>error</h3>
+      								</div>
+      								<h2>科目入力欄</h2>
+									<form action="new" method="post">
+										<div class="mdl-textfield mdl-js-textfield">
+											<input class="mdl-textfield__input" type="text" id="<%= @day_hash[i] %><%= j+1 %>" />
+											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">科目名</label>
+										</div>
+
+										<div class="mdl-textfield mdl-js-textfield">
+											<input class="mdl-textfield__input" type="text" id="<%= @day_hash[i] %><%= j+1 %>" />
+											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">科目コード</label>
+										</div>
+
+										<div class="mdl-textfield mdl-js-textfield">
+											<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="<%= @day_hash[i] %><%= j+1 %>" />
+											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">単位数</label>
+											<span class="mdl-textfield__error">数字を入力してください。</span>
+										</div>		
+										<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+											SUBMIT
+										</button>
+									</form>
     							</div>
   							</div>
 						</td>
@@ -66,7 +89,5 @@
 			<% end %>
 		</tbody>
 	</table>
-
-
 </div>
 
