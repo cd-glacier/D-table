@@ -114,6 +114,7 @@ td.slide{
 	height:400px;
 }
 .modal {
+  background: #FFFBE4;
   z-index: 20;
   cursor:default;
   display: none;
@@ -144,7 +145,6 @@ td.slide{
 
 .modal>.modal-content {
   width: 100%;
-  height: 100%;
   padding: 0px;
 }
 
@@ -160,8 +160,7 @@ td.slide{
 }
 
 .subject_wrapper{
-	background: #FFFBE4;
-	height:100%;
+	
 }
 
 
