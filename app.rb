@@ -4,14 +4,13 @@ require "sinatra/reloader" if development?
 require 'active_record'
 
 ActiveRecord::Base.configurations = YAML.load_file('database.yml')
-ActiveRecord::Base.establish_connection('development')
+ActiveRecord::Base.establish_connection(:development)
 
 set :public_folder, File.dirname(__FILE__) + '/public'
 
-=begin
-class Memos < ActiveRecord::Base
+class Zyoushisu_subject < ActiveRecord::Base
+	self.primary_key = :code
 end
-=end
 
 
 get "/D_table" do
@@ -44,3 +43,8 @@ post "/subjects/:week/new" do
 	redirect to "/D_table"
 end
 
+
+get "/test" do
+	@subject = Zyoushisu_subject.find("G0124")
+	erb :test
+end

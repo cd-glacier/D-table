@@ -1,4 +1,3 @@
-
 /*subjectで選択した科目をD_tableで表示*/
 var day_array = [null, "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
 $(".subject").on("click", function(){
