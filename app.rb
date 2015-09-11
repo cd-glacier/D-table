@@ -1,6 +1,9 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 
+require "sinatra"
+require "sinatra/json"
+
 require 'active_record'
 
 ActiveRecord::Base.configurations = YAML.load_file('database.yml')
@@ -26,9 +29,12 @@ get "/D_table" do
 	@gakka = params[:sub2]
 
 	@gakubu_hash = {"rikou" => "理工学部", "keizai" => "経済学部", "bunzyou" => "文化情報学部", "seimei" => "生命医科学部"}
-	@gakka_hash = {"zyoushisu" => "情報システム学科", "interi" => "インテリジェント情報工学科", "denki" => "電気工学科"}
+	@gakka_hash = {"zyoushisu" => "情報システムデザイン学科", "interi" => "インテリジェント情報工学科", "denki" => "電気工学科"}
 	@day_hash = {0 => "nul", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"}
 	@semester_hash = {"Spring" => "春", "Autumn" => "秋"}
+	
+	#データベース	
+	@subject = Zyoushisu_subject.all
 
 	erb :D_table
 end
@@ -47,6 +53,7 @@ get "/subjects/:week/:period/:grade/:semester" do
 	@period = params[:period]
 	@semester = params[:semester]
 	@grade = params[:grade]
+	@requiered = 1
 
 	#データベース	
 	@subject = Zyoushisu_subject.all
@@ -72,7 +79,6 @@ post "/:week/:period/:grade/:semester/new" do
 	@subject.save
 end
 
-get "/test" do
-	@subject = Zyoushisu_subject.all
-	erb :test
+get "/dump" do
+	erb :dump
 end

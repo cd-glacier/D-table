@@ -21,6 +21,7 @@ var sum_credits = 0;
   		}
   	}
 })();
+
 /*subjectで選択した科目をD_tableで表示*/
 $(document).on("click", ".subject", function(event){
 	event.preventDefault();
@@ -35,7 +36,6 @@ $(document).on("click", ".subject", function(event){
 	/*単位表示*/
 	$(".sum-credits").html("選択単位数:" + sum_credits);
 	
-
 	$(this).parents('.modal').fadeOut();
 	$(this).parents('td').addClass('before');
     var ele = $(this);
@@ -129,10 +129,17 @@ $(document).on('click', '.modal-content .mdl-button', function(event){
 		}
 	});
 });
+<<<<<<< HEAD
 /*科目コード表示*/
 $(document).on('click', '.mdl-navigation .mdl-button', function(event){
   	event.preventDefault();
   	$(".export-wrapper").toggle();
+=======
+
+/*必修科目の表示*/
+(function() {
+	console.log(".D-table-" + day + period);
+>>>>>>> 914468aff15c4c91a26de79bf568a5398aa84039
 	var array_day=['nul','Mon','Tue','Wed','Thu','Fri','Sat'];
 	var array = new Array(6);
   	for(var j = 0;j<6;j++){
@@ -140,8 +147,15 @@ $(document).on('click', '.mdl-navigation .mdl-button', function(event){
   		for(var i = 0;i<6;i++){
   			var day = array_day[i+1];
   			var period = j + 1;
+<<<<<<< HEAD
   			var ele = $("#D-table-"+day+period).children(".td-content");
 			ele.clone().appendTo(".export-wrapper");		
   		}
   	}
+=======
+				var tmp = $(".D-table-" + day + period).children(".requiered-subject");
+				$(".D-table-" + day + period).children(".td-content").html(tmp);
+			}
+		}
+>>>>>>> 914468aff15c4c91a26de79bf568a5398aa84039
 });
