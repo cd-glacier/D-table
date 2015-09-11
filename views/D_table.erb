@@ -13,6 +13,7 @@
 		<p><%= @gakubu_hash[@gakubu] %></p>
 		<p><%= @gakka_hash[@gakka] %></p>
 		<p><%= @grade %>年</p>
+		<p><%= @semester_hash[@semester] %>学期</p>
 		<p class="sum-credits">選択単位数:0</p>
 		<!-- コード書き出し用ボタン -->
 		<p><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Export Codes</button></p>
@@ -25,6 +26,7 @@
 			<p><%= @gakubu_hash[@gakubu] %></p>
 			<p><%= @gakka_hash[@gakka] %></p>
 			<p><%= @grade %>年</p>
+			<p><%= @semester[@semester] %>学期</p>
 			<p class="sum-credits">選択単位数:0</p>
 			<!-- コード書き出し用ボタン -->
 			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent navb">
@@ -52,7 +54,7 @@
 				<tr>
 					<th class="r0"><%= j + 1 %>限目</th>
 					<% 6.times do |i| %>
-						<td class="r<%= i + 1 %> D-table-<%= @day_hash[i + 1] %><%= j + 1 %> before" id="D-table-<%= @day_hash[i + 1] %><%= j + 1 %> off" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>">
+						<td class="r<%= i + 1 %> D-table-<%= @day_hash[i + 1] %><%= j + 1 %> before" id="D-table-<%= @day_hash[i + 1] %><%= j + 1 %> off" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>" data-semester="<%= @semester %>">
 							<div class="td-content">clickで科目を選択</div>
 							<div class="modal"> 
 								<a href="#" class="close"><i class="material-icons">clear</i></a>
@@ -77,7 +79,7 @@
 											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">単位数</label>
 											<span class="mdl-textfield__error">数字を入力してください。</span>
 										</div>		
-										<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>">
+										<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>" data-semester="<%= @semester %>">
 											SUBMIT
 										</button>
 									</form>

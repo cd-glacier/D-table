@@ -47,6 +47,8 @@ $(function () {
 				var ele = $('td.open');
 				var day = $(this).data("day");
 				var period = $(this).data("period");
+				var semester = $(this).data("semester");
+				var grade = $(this).data("grade");
 				var ele2 = $(this);
 				ele2.removeClass('before');
 				/*animation*/
@@ -63,7 +65,7 @@ $(function () {
 		},700);
 				/*ajax*/
 	$.ajax({
-		url: "/subjects/" + String(day) + "/" + period,
+		url: "/subjects/" + String(day) + "/" + period + "/" + grade + "/" + semester,
 		success: function(data) {
 			$(".D-table-" + String(day) + period + " .modal-dynamic").html(data);
 	 	}
@@ -90,10 +92,11 @@ $(document).on('click', '.mdl-button', function(event){
   event.preventDefault();
 	var day = $(this).data("day");
 	var period = $(this).data("period");
-	console.log($(this).parent().find("input[name=subname]").val());
+	var semester = $(this).data("semester");
+	var grade = $(this).data("grade");
 	$.ajax({
 		type: "POST",
-		url: "/" + day + "/" + period + "/new",
+		url: "/" + day + "/" + period + "/" + grade + "/" + semester +  "/new",
 		data: {
 			"subname": $(this).parent().find("input[name=subname]").val(),
 			"code": $(this).parent().find("input[name=code]").val(),
@@ -101,6 +104,7 @@ $(document).on('click', '.mdl-button', function(event){
 		},
 		success: function(){
 			alert("保存しました。");
+
 		}
 	});
 });
