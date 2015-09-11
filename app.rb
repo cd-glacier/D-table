@@ -20,13 +20,15 @@ end
 
 get "/D_table" do
 	#loginから情報受け取り
+	@semester = params[:semester]
 	@grade = params[:grade]
 	@gakubu = params[:sub1]
-	@gakka = params[:sub2] 
+	@gakka = params[:sub2]
 
 	@gakubu_hash = {"rikou" => "理工学部", "keizai" => "経済学部", "bunzyou" => "文化情報学部", "seimei" => "生命医科学部"}
 	@gakka_hash = {"zyoushisu" => "情報システム学科", "interi" => "インテリジェント情報工学科", "denki" => "電気工学科"}
 	@day_hash = {0 => "nul", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"}
+	@semester_hash = {"Spring" => "春", "Autumn" => "秋"}
 
 	erb :D_table
 end
@@ -40,20 +42,20 @@ get '/selectsub1' do
 	erb  :subselectbox, :layout => false;
 end
 
-get "/subjects/:week/:period" do
+get "/subjects/:week/:period/:grade/:semseter" do
 	@week = params[:week]
 	@period = params[:period]
+	@semester = params[:semester]
+	@grade = params[:grade]
 
 	#データベース	
-	@subject = Zyoushisu_subject.where(grade: 1)
+	@subject = Zyoushisu_subject.all
 	
 	erb :subjects, layout: false
 
 end
 
-post "/:week/:period/new" do
-	puts params[:code]
-	puts params[:subname]
+post "/:week/:period/:grade/:semester/new" do
 	@subject = Zyoushisu_subject.new
 	@subject.code = params[:code]
 	@subject.subname = params[:subname]
@@ -65,10 +67,10 @@ post "/:week/:period/new" do
 	@subject.last_url = "null"
 	@subject.classes = 1
 	@subject.remark = 0
-	@subject.semester = "Spring"
+	@subject.grade = params[:grade] 
+	@subject.semester = params[:semester]
 	@subject.save
 end
-
 
 get "/test" do
 	@subject = Zyoushisu_subject.all
