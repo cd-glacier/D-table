@@ -8,21 +8,21 @@
 	<% @requiered = 1 %>
 	<% @subject.each do |subject| %>
 		<% if subject.classes == 0 && subject.semester == @semester && subject.grade <= @grade.to_i && subject.dates == @week + @period then %>
-			<p><a class="requiered-subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
+			<p><a class="requiered-subject"   data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
 				<%= subject.subname %>
 				(<%= subject.grade %>年)
 			<% @requiered = 0 %>	
-			</a></p>
+			</a><a href="<%=subject.last_url %>" TARGET="_blank">(シラバス)</a></p>
 			<% break %>
 		<% end %>
 	<% end %>
 	
 	<% @subject.each do |subject| %>
 		<% if @requiered == 1 &&  subject.semester == @semester && subject.grade <= @grade.to_i && subject.dates == @week + @period then %>
-			<p><a class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
+			<p><a href="<%=subject.last_url %>" class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
 				<%= subject.subname %>
 				(<%= subject.grade %>年)
-			</a></p>
+			</a><a href="<%=subject.last_url %>" TARGET="_blank">(シラバス)</a></p>
 		<% end %>
 	<% end %>
 
