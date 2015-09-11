@@ -1,10 +1,10 @@
 
 <div class="subject_wrapper">
-	<p>/subjects/<%= @week %>/<%= @period %>/<%= @semester %></p>
+	<p>/subjects/<%= @week %>/<%= @period %>/<%= @grade %>/<%= @semester %></p>
 	<h2>科目一覧</h2>
 		<!--データベース導入後-->
 		<% @subject.each do |subject| %>
-			<% if subject.dates == @week + @period %>
+			<% if subject.dates == @week + @period && subject.semester == @semester && subject.grade <= @grade.to_i then %>
 				<p><a class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
 					<%= subject.subname %>
 					(<%= subject.grade %>年)

@@ -42,7 +42,7 @@ get '/selectsub1' do
 	erb  :subselectbox, :layout => false;
 end
 
-get "/subjects/:week/:period/:grade/:semseter" do
+get "/subjects/:week/:period/:grade/:semester" do
 	@week = params[:week]
 	@period = params[:period]
 	@semester = params[:semester]
