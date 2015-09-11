@@ -1,19 +1,19 @@
 
 <div class="subject_wrapper">
-
-	<p>/subjects/<%= @week %>/<%= @period %>/<%= @grade %>/<%= @semester %></p>
 	<h4>科目一覧</h4>
 	<!--データベース導入後-->
 	<!--汚すぎてごめんなさい-->
 	<% @requiered = 1 %>
 	<% @subject.each do |subject| %>
 		<% if subject.classes == 0 && subject.semester == @semester && subject.grade <= @grade.to_i && subject.dates == @week + @period then %>
-			<p><a class="requiered-subject"   data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
+			<p class="requiered-subject subject-destroy" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>"><a    data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
 				<%= subject.subname %>
 				(<%= subject.grade %>年)
 			<% @requiered = 0 %>	
-			</a><a href="<%=subject.last_url %>" TARGET="_blank">(シラバス)</a></p>
-			<% break %>
+			</a><br />
+			<a class="code">科目コード：<%=subject.code %></a>
+			<a href="<%=subject.last_url %>" TARGET="_blank">(シラバス)</a></p>
+			
 		<% end %>
 	<% end %>
 	
@@ -22,7 +22,9 @@
 			<p><a href="<%=subject.last_url %>" class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
 				<%= subject.subname %>
 				(<%= subject.grade %>年)
-			</a><a href="<%=subject.last_url %>" TARGET="_blank">(シラバス)</a></p>
+			</a><br />
+				<a class="code">科目コード：<%=subject.code %></a>
+			<a href="<%=subject.last_url %>" TARGET="_blank">(シラバス)</a></p>
 		<% end %>
 	<% end %>
 

@@ -55,7 +55,7 @@
 					<th class="r0"><%= j + 1 %>限目</th>
 					<% 6.times do |i| %>
 						<td class="r<%= i + 1 %> D-table-<%= @day_hash[i + 1] %><%= j + 1 %> before" id="D-table-<%= @day_hash[i + 1] %><%= j + 1 %>" data-day="<%= @day_hash[i + 1] %>" data-period="<%= j + 1 %>" data-semester="<%= @semester %>" data-grade="<%= @grade %>">
-							<div class="td-content">clickで科目を選択</div>
+							<div class="td-content"></div>
 							<div class="modal"> 
 								<a href="#" class="close"><i class="material-icons">clear</i></a>
     							<div class="modal-content">
@@ -92,7 +92,7 @@
 		</tbody>
 	</table>
 	<div class="export-wrapper">
-		export
+		
 	</div>
 </div>
 

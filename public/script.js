@@ -23,7 +23,8 @@ $(function() {
   	}
 });
 $(function(){
-	setTimeout(function(){
+	setTimeout(function(){	
+		var sum_credits = 0;
 		var array_day=['nul','Mon','Tue','Wed','Thu','Fri','Sat'];
 		var array = new Array(6);
   	for(var j = 0;j<6;j++){
@@ -32,11 +33,19 @@ $(function(){
   			var day = array_day[i+1];
   			var period = j + 1;
   			var hoge = ".D-table-"+day+period;
-  			var tmp = $(hoge).find(".requiered-subject").html();
+  			var tmp = $(hoge).find(".requiered-subject");
   			$(hoge).find(".td-content").html(tmp);
+  			
+  			/*単位数計算*/
+			var choiced_credits = $(hoge).find(".requiered-subject").data("credit");
+  			sum_credits += choiced_credits;
   			}
   		}
-  	},3000);
+  
+	
+	/*単位表示*/
+	$(".sum-credits").html("選択単位数:" + sum_credits);
+  	},500);
 });
 
 /*subjectで選択した科目をD_tableで表示*/
@@ -47,9 +56,9 @@ $(document).on("click", ".subject", function(event){
 	var choiced_subject = $(this).data("subject");
 
 	/*単位数計算*/
+	$(".D-table-"+day_period).children(".td-content").html( "<a class='subject-destroy' data-credit='" +  choiced_credits + "'>"+choiced_subject + "[x]</a>");
 	var choiced_credits = $(this).data("credit");
 	sum_credits += choiced_credits;
-	$(".D-table-"+day_period).children(".td-content").html( "<a class='subject-destroy' data-credit='" +  choiced_credits + "'>"+choiced_subject + "[x]</a>");
 	/*単位表示*/
 	$(".sum-credits").html("選択単位数:" + sum_credits);
 	
@@ -74,13 +83,13 @@ $(document).on("click",".subject-destroy",function(event){
 	$(".sum-credits").html("選択単位数:" + sum_credits);
 
 	$(this).remove();
-	$(element).html('clickで科目を選択');
+	
 });
 
 
 /*モーダル*/
 $(function () {
-    $(document).on('click', '.before', function (event) {				
+    $(document).on('click', '.before:not(".requiered-subject")', function (event) {				
 				event.stopPropagation();
 				var ele = $('td.open');
 				var day = $(this).data("day");
@@ -151,6 +160,7 @@ $(document).on('click', '.modal-content .mdl-button', function(event){
 $(document).on('click', '.mdl-navigation .mdl-button', function(event){
   	event.preventDefault();
   	$(".export-wrapper").toggle();
+  	$(".brwsr1").toggle();
 	var array_day=['nul','Mon','Tue','Wed','Thu','Fri','Sat'];
 	var array = new Array(6);
   	for(var j = 0;j<6;j++){
