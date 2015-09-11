@@ -1,6 +1,9 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 
+require "sinatra"
+require "sinatra/json"
+
 require 'active_record'
 
 ActiveRecord::Base.configurations = YAML.load_file('database.yml')
@@ -47,6 +50,7 @@ get "/subjects/:week/:period/:grade/:semester" do
 	@period = params[:period]
 	@semester = params[:semester]
 	@grade = params[:grade]
+	@requiered = 1
 
 	#データベース	
 	@subject = Zyoushisu_subject.all
@@ -72,4 +76,6 @@ post "/:week/:period/:grade/:semester/new" do
 	@subject.save
 end
 
-
+get "/dump" do
+	erb :dump
+end

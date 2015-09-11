@@ -14,7 +14,6 @@ $(document).on("click", ".subject", function(event){
 	/*単位表示*/
 	$(".sum-credits").html("選択単位数:" + sum_credits);
 	
-
 	$(this).parents('.modal').fadeOut();
 	$(this).parents('td').addClass('before');
     var ele = $(this);
@@ -108,3 +107,5 @@ $(document).on('click', '.mdl-button', function(event){
 		}
 	});
 });
+
+
