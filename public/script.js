@@ -1,5 +1,26 @@
 var sum_credits = 0;
-
+(function() {
+	var array_day=['nul','Mon','Tue','Wed','Thu','Fri','Sat'];
+	var array = new Array(6);
+  	for(var j = 0;j<6;j++){
+  		array[j] = new Array(6);
+  		for(var i = 0;i<6;i++){
+  			var day = array_day[i+1];
+  			var period = j + 1;
+  			var ele = $("#D-table-"+day+period);
+			var semester = ele.data("semester");
+			var grade = ele.data("grade");
+			array[j][i] = ".D-table-" + String(day) + period + " .modal-dynamic";
+			(function(tmp_j, tmp_i) {		
+  			$.ajax({
+				url: "/subjects/" + String(day) + "/" + period + "/" + grade + "/" + semester
+				}).done(function(data) {
+					$(array[tmp_j][tmp_i]).html(data);
+	 			});
+	 		})(j, i);
+  		}
+  	}
+})();
 /*subjectで選択した科目をD_tableで表示*/
 $(document).on("click", ".subject", function(event){
 	event.preventDefault();
