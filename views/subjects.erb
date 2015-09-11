@@ -2,15 +2,28 @@
 <div class="subject_wrapper">
 	<p>/subjects/<%= @week %>/<%= @period %>/<%= @grade %>/<%= @semester %></p>
 	<h2>科目一覧</h2>
-		<!--データベース導入後-->
-		<% @subject.each do |subject| %>
-			<% if subject.dates == @week + @period && subject.semester == @semester && subject.grade <= @grade.to_i then %>
-				<p><a class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
-					<%= subject.subname %>
-					(<%= subject.grade %>年)
-					</a></p>
-			<% end %>
+	<!--データベース導入後-->
+	<!--汚すぎてごめんなさい-->
+	<% @requiered = 1 %>
+	<% @subject.each do |subject| %>
+		<% if subject.classes == 0 && subject.semester == @semester && subject.grade <= @grade.to_i && subject.dates == @week + @period then %>
+			<p><a class="requiered-subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
+				<%= subject.subname %>
+				(<%= subject.grade %>年)
+			<% @requiered = 0 %>	
+			</a></p>
+			<% break %>
 		<% end %>
+	<% end %>
+	
+	<% @subject.each do |subject| %>
+		<% if @requiered == 1 &&  subject.semester == @semester && subject.grade <= @grade.to_i && subject.dates == @week + @period then %>
+			<p><a class="subject" data-subject="<%= subject.subname %>" data-dp="<%= subject.dates %>" data-credit="<%= subject.credit %>" href="#">
+				<%= subject.subname %>
+				(<%= subject.grade %>年)
+			</a></p>
+		<% end %>
+	<% end %>
 
 		<!--ここに科目入力欄が入る(D_table.erb参照)-->	
 
