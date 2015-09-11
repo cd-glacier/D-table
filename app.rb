@@ -32,6 +32,9 @@ get "/D_table" do
 	@gakka_hash = {"zyoushisu" => "情報システムデザイン学科", "interi" => "インテリジェント情報工学科", "denki" => "電気工学科"}
 	@day_hash = {0 => "nul", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"}
 	@semester_hash = {"Spring" => "春", "Autumn" => "秋"}
+	
+	#データベース	
+	@subject = Zyoushisu_subject.all
 
 	erb :D_table
 end

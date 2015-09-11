@@ -21,6 +21,7 @@ var sum_credits = 0;
   		}
   	}
 })();
+
 /*subjectで選択した科目をD_tableで表示*/
 $(document).on("click", ".subject", function(event){
 	event.preventDefault();
@@ -129,4 +130,18 @@ $(document).on('click', '.mdl-button', function(event){
 	});
 });
 
-
+/*必修科目の表示*/
+(function() {
+	console.log(".D-table-" + day + period);
+	var array_day=['nul','Mon','Tue','Wed','Thu','Fri','Sat'];
+	var array = new Array(6);
+  	for(var j = 0;j<6;j++){
+  		array[j] = new Array(6);
+  		for(var i = 0;i<6;i++){
+  			var day = array_day[i+1];
+  			var period = j + 1;
+				var tmp = $(".D-table-" + day + period).children(".requiered-subject");
+				$(".D-table-" + day + period).children(".td-content").html(tmp);
+			}
+		}
+});
