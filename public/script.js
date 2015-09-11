@@ -132,6 +132,7 @@ $(document).on('click', '.modal-content .mdl-button', function(event){
 /*科目コード表示*/
 $(document).on('click', '.mdl-navigation .mdl-button', function(event){
   	event.preventDefault();
+  	$(".export-wrapper").toggle();
 	var array_day=['nul','Mon','Tue','Wed','Thu','Fri','Sat'];
 	var array = new Array(6);
   	for(var j = 0;j<6;j++){

@@ -167,5 +167,9 @@ td.open{
 	bottom:0;
 }
 
+.export-wrapper{
+	display:none;
+}
+
 
 
