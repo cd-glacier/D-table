@@ -38,6 +38,7 @@ $(function(){
   			
   			/*単位数計算*/
 			var choiced_credits = $(hoge).find(".requiered-subject").data("credit");
+			console.log(choiced_credits);
   			sum_credits += choiced_credits;
   			}
   		}
@@ -49,14 +50,13 @@ $(function(){
 });
 
 /*subjectで選択した科目をD_tableで表示*/
-$(document).on("click", ".subject", function(event){
+$(document).on("click", ".modal .subject", function(event){
 	event.preventDefault();
   event.stopPropagation();
 	var day_period = $(this).data("dp");
 	var choiced_subject = $(this).data("subject");
-
+	var ele=$(this)
 	/*単位数計算*/
-	$(".D-table-"+day_period).children(".td-content").html( "<a class='subject-destroy' data-credit='" +  choiced_credits + "'>"+choiced_subject + "[x]</a>");
 	var choiced_credits = $(this).data("credit");
 	sum_credits += choiced_credits;
 	/*単位表示*/
@@ -65,6 +65,7 @@ $(document).on("click", ".subject", function(event){
 	$(this).parents('.modal').fadeOut();
 	$(this).parents('td').addClass('before');
     var ele = $(this);
+    $(".D-table-"+day_period).children(".td-content").html(ele.parent());
     setTimeout(function (){
         ele.parents('td').removeClass('open');
         $(".D-table-"+day_period).children(".td-content").fadeIn();
@@ -72,8 +73,9 @@ $(document).on("click", ".subject", function(event){
 });
 
 /*[x]押されたら選択されてる教科消して,(単位数も削除)*/
-$(document).on("click",".subject-destroy",function(event){	
+$(document).on("click",".td-content .subject-destroy",function(event){	
   event.stopPropagation();  
+  event.preventDefault();
 	var element = $(this).parent();
 
 	/*単位数計算*/
@@ -82,7 +84,7 @@ $(document).on("click",".subject-destroy",function(event){
 	/*単位表示*/
 	$(".sum-credits").html("選択単位数:" + sum_credits);
 
-	$(this).remove();
+	$(this).parent().remove();
 	
 });
 
@@ -172,5 +174,11 @@ $(document).on('click', '.mdl-navigation .mdl-button', function(event){
 			ele.clone().appendTo(".export-wrapper");		
   		}
   	}
+
+});
+$(document).on('click', '.mushi', function(event){
+  	
+  	event.stopPropagation();
+  	
 
 });
