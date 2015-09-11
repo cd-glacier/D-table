@@ -60,10 +60,10 @@
 								<a href="#" class="close"><i class="material-icons">clear</i></a>
     							<div class="modal-content">
     								<div class= "modal-dynamic">
-      									<h3>error</h3>
+      									<h4>error</h4>
       								</div>
-      								<h2>科目入力欄</h2>
-											<form action="/<%= @day_hash[i] %>/<%= j+1 %>/new" method="post" onsubmit="send()">
+										<form action="/<%= @day_hash[i] %>/<%= j+1 %>/new" method="post" onsubmit="send()">
+										<h4>科目入力欄</h4>
 										<div class="mdl-textfield mdl-js-textfield">
 											<input class="mdl-textfield__input" type="text" id="<%= @day_hash[i] %><%= j+1 %>" name="subname" />
 											<label class="mdl-textfield__label" for="<%= @day_hash[i] %><%= j+1 %>">科目名</label>
@@ -91,5 +91,8 @@
 			<% end %>
 		</tbody>
 	</table>
+	<div class="export-wrapper">
+		export
+	</div>
 </div>
 

@@ -109,7 +109,7 @@ $(function () {
 });
 
 /*post送信後、科目一覧に追加、cellに表示*/
-$(document).on('click', '.mdl-button', function(event){
+$(document).on('click', '.modal-content .mdl-button', function(event){
   event.preventDefault();
 	var day = $(this).data("day");
 	var period = $(this).data("period");
@@ -128,4 +128,19 @@ $(document).on('click', '.mdl-button', function(event){
 
 		}
 	});
+});
+/*科目コード表示*/
+$(document).on('click', '.mdl-navigation .mdl-button', function(event){
+  	event.preventDefault();
+	var array_day=['nul','Mon','Tue','Wed','Thu','Fri','Sat'];
+	var array = new Array(6);
+  	for(var j = 0;j<6;j++){
+  		array[j] = new Array(6);
+  		for(var i = 0;i<6;i++){
+  			var day = array_day[i+1];
+  			var period = j + 1;
+  			var ele = $("#D-table-"+day+period).children(".td-content");
+			ele.clone().appendTo(".export-wrapper");		
+  		}
+  	}
 });
