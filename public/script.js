@@ -8,8 +8,8 @@ $(function() {
   			var day = array_day[i+1];
   			var period = j + 1;
   			var ele = $("#D-table-"+day+period);
-			var semester = ele.data("semester");
-			var grade = ele.data("grade");
+				var semester = ele.data("semester");
+				var grade = ele.data("grade");
 			array[j][i] = ".D-table-" + String(day) + period + " .modal-dynamic";
 			
 			(function(tmp_j, tmp_i) {		
@@ -22,6 +22,8 @@ $(function() {
   		}
   	}
 });
+
+/*科目表示*/
 $(function(){
 	setTimeout(function(){	
 		var sum_credits = 0;
@@ -37,11 +39,13 @@ $(function(){
   			$(hoge).find(".td-content").html(tmp);
   			
   			/*単位数計算*/
-			var choiced_credits = $(hoge).find(".requiered-subject").data("credit");
-			console.log(choiced_credits);
-  			sum_credits += choiced_credits;
-  			}
-  		}
+				var choiced_credits = $(hoge).find(".requiered-subject").data("credit");
+				if(choiced_credits != null){
+					console.log(choiced_credits);
+					sum_credits += choiced_credits;
+				}
+			}
+		}
   
 	
 	/*単位表示*/
