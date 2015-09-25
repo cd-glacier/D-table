@@ -26,7 +26,6 @@ $(function() {
 /*科目表示*/
 $(function(){
 	setTimeout(function(){	
-		var sum_credits = 0;
 		var array_day=['nul','Mon','Tue','Wed','Thu','Fri','Sat'];
 		var array = new Array(6);
   	for(var j = 0;j<6;j++){
@@ -63,6 +62,7 @@ $(document).on("click", ".modal .subject", function(event){
 	/*単位数計算*/
 	var choiced_credits = $(this).data("credit");
 	sum_credits += choiced_credits;
+	
 	/*単位表示*/
 	$(".sum-credits").html("選択単位数:" + sum_credits);
 	
